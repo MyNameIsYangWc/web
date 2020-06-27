@@ -1,11 +1,22 @@
 import axios from '../axios'
-import { data } from 'autoprefixer'
 
-/*门户登录*/
-export const login=(data)=>{
+/*
+ * 系统登录模块
+ */
+
+// 登录
+export const login = data => {
   return axios({
-    url: '/login',
+    url: 'login',
     method: 'post',
     data
+  })
+}
+
+// 登出
+export const logout = () => {
+  return axios({
+    url: 'logout',
+    method: 'get'
   })
 }

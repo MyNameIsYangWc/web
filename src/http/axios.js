@@ -2,7 +2,6 @@ import axios from 'axios';
 import config from './config';
 import Cookies from "js-cookie";
 import router from '@/router'
-import { error } from 'shelljs';
 
 export default function $axios(optios){
     return new Promise((resolve,reject)=>{
