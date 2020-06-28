@@ -80,6 +80,7 @@ export default {
       this.loginForm.src = this.global.baseUrl + "/kaptcha?t=" + new Date().getTime();
     },
     reset() {
+      this.loading=false
       this.$refs.loginForm.resetFields()
     }
 
