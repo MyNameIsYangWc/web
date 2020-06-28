@@ -1,5 +1,5 @@
 <template>
-   <el-form :model="loginForm" :reles="fieldRules" ref="loginForm" label-position="left" label-width="0px" class="demo-ruleForm login-container">
+   <el-form :model="loginForm" :rules="fieldRules" ref="loginForm" label-position="left" label-width="0px" class="demo-ruleForm login-container">
      <span class="tool-bar"></span>
      <h2 class="title" style="padding-left: 22px">系统登录</h2>
      <el-form-item prop="account">
@@ -55,6 +55,12 @@ export default {
       checked: true
     }
   },
+  //渲染页面后在调用接口
+  mounted(){
+   this.refreshCaptcha()
+  },
+  //调用接口后再渲染页面
+  // created(){},
   methods:{
     login(){
       this.loading=true
@@ -63,16 +69,17 @@ export default {
         password: this.loginForm.password,
         captcha: this.loginForm.captcha
       }
-      this.$api.login.login(userInfo).then(function(res){
+      this.$api.login.login(userInfo).then((res)=>{
         if(res.code!=200){
-          this.$message({ message: res.message, type: 'error' })
+          this.loading=false
+          this.$message({ message: res.msg, type: 'error' })
         }else {
           Cookies.set('token',res.data.token)//放置token到cookie
           sessionStorage.setItem("user",userInfo.account)//保存用户到本地会话
           router.push('/')//登录成功,调到此处
         }
         this.loading=false
-      }).catch(function(res){
+      }).catch((res)=>{
         this.$message({ message: res.message, type: 'error' })
       });
     },
