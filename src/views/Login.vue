@@ -86,26 +86,22 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-
+<style lang="scss" scoped>
+  .login-container {
+     -webkit-border-radius: 5px;
+    border-radius: 5px;
+     -moz-border-radius: 5px;
+    background-clip: padding-box;
+    margin: 100px auto;
+    width: 350px;
+    padding: 35px 35px 15px 35px;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 0 25px #cac6c6;
+    .title {
+      margin: 0px auto 30px auto;
+      text-align: center;
+      color: #505458;
+    }
+  }
 </style>
-
-<!--<style lang="scss" scoped>-->
-  <!--.login-container {-->
-    <!-- -webkit-border-radius: 5px;-->
-    <!--border-radius: 5px;-->
-    <!-- -moz-border-radius: 5px;-->
-    <!--background-clip: padding-box;-->
-    <!--margin: 100px auto;-->
-    <!--width: 350px;-->
-    <!--padding: 35px 35px 15px 35px;-->
-    <!--background: #fff;-->
-    <!--border: 1px solid #eaeaea;-->
-    <!--box-shadow: 0 0 25px #cac6c6;-->
-    <!--.title {-->
-      <!--margin: 0px auto 30px auto;-->
-      <!--text-align: center;-->
-      <!--color: #505458;-->
-    <!--}-->
-  <!--}-->
-<!--</style>-->
