@@ -5,7 +5,7 @@
       <el-menu class="el-menu-demo" background-color="#14889A" text-color="#14889A" active-text-color="#14889A" mode="horizontal">
         <el-menu-item index="1">
           <!-- 用户信息 -->
-          <span class="user-info"><img :src="user.avatar" />{{user.name}}</span>
+          <span class="user-info">{{user.name}}<img :src="user.avatar" /></span>
         </el-menu-item>
       </el-menu>
     </span>
@@ -17,10 +17,10 @@
     data(){
       return{
         user:{
-          name: "杨文超",
+          name: "",
           avatar: "",
-          role: "超级管理员",
-          registeInfo: "注册时间：2018-12-20 "
+          role: "",
+          registeInfo: ""
         },
         activeIndex:'1',
         langVisible: false
