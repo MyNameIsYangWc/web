@@ -8,6 +8,7 @@ import'element-ui/lib/theme-chalk/index.css'
 import api from './http'
 import global from './http/modules/global'
 import 'font-awesome/css/font-awesome.min.css'
+import store from './store'
 
 
 Vue.config.productionTip = false
@@ -20,5 +21,6 @@ Vue.prototype.global=global //挂载全局配置模块
 new Vue({
   el: '#app',
   router,
+  store,
  render: h=>h(App)
 })
