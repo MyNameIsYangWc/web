@@ -27,7 +27,7 @@
       }
     },
     mounted(){
-      var user=sessionStorage.getItem("user")
+      var user=JSON.parse(sessionStorage.getItem("user"))
       if (user) {
         this.user.name = user.username
         this.user.avatar = require("@/assets/user.png")

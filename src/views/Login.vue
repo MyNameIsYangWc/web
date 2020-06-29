@@ -75,7 +75,7 @@ export default {
           this.$message({ message: res.msg, type: 'error' })
         }else {
           Cookies.set('token',res.data.token)//放置token到cookie
-          sessionStorage.setItem("user",res.data)//保存用户到本地会话
+          sessionStorage.setItem("user",JSON.stringify(res.data))//保存用户到本地会话
           router.push('/')//登录成功,调到此处
         }
         this.loading=false
