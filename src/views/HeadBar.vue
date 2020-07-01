@@ -1,5 +1,5 @@
-<template> 
-  <div class="headbar" style="background:#14889A" 
+<template>
+  <div class="headbar" style="background:#14889A"
     :class="collapse?'position-collapse-left':'position-left'">
     <!-- 导航收缩 -->
     <span class="hamburg">
@@ -58,6 +58,13 @@ export default {
     ...mapState({
       collapse: state=>state.app.collapse
     })
+  },
+  mounted(){
+    var user=JSON.parse(sessionStorage.getItem("user"))
+    if (user) {
+      this.user.name = user.username
+      this.user.avatar = this.global.baseUrl + "/userImage?fileId=" + user.fileId;//用户头像
+    }
   }
 }
 </script>
